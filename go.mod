@@ -1,6 +1,6 @@
 module github.com/ringsaturn/hertz-template-test-panic
 
-go 1.21.0
+go 1.21
 
 require github.com/cloudwego/hertz v0.6.7
 
