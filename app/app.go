@@ -3,6 +3,8 @@ package app
 import (
 	"context"
 	"embed"
+	_ "embed"
+	"fmt"
 	"html/template"
 	"net/http"
 
@@ -21,4 +23,12 @@ func NewHertz() *server.Hertz {
 		ctx.HTML(http.StatusOK, "hello.html", nil)
 	})
 	return h
+}
+
+func TryReadFS() {
+	b, err := f.ReadFile("template/hello.html")
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println(string(b))
 }

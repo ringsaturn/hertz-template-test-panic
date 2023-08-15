@@ -1,6 +1,7 @@
 package app_test
 
 import (
+	_ "embed"
 	"net/http"
 	"testing"
 
@@ -15,4 +16,8 @@ func TestAppHello(t *testing.T) {
 	resp := w.Result()
 	t.Log(string(resp.BodyBytes()))
 	assert.DeepEqual(t, http.StatusOK, resp.StatusCode())
+}
+
+func TestTryReadFS(t *testing.T) {
+	app.TryReadFS()
 }
