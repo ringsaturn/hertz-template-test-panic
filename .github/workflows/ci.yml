@@ -20,4 +20,5 @@ jobs:
         with:
           go-version: ${{ matrix.go }}
 
+      - run: go env
       - run: go test ./...
